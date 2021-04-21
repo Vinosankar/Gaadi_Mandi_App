@@ -31,12 +31,49 @@ public class LoginTestcases extends commonfunction {
 		loginpage.Password.sendKeys(properties.getProperty("Password"));
 		loginpage.Loginbutton.click();
 		Thread.sleep(4000);
+		/*loginpage.Admin.click();
+		loginpage.Subplan.click();*/
 		
 		loginpage.Sell.click();
-		Thread.sleep(5000);
+		Thread.sleep(6000);
+		/*loginpage.professtional.click();
+		loginpage.proceed.click();*/
 		 loginpage.Location.sendKeys("chennai");
+		
+	/*	loginpage.Register.click();
+		loginpage.moblie.sendKeys("9789330364");
+		loginpage.email.sendKeys("vinosankar1999@gmail.com");
+		loginpage.password.sendKeys("Vino@123");
+		loginpage.repass.sendKeys("Vino@123");
+		loginpage.pincode.sendKeys("621316");*/
+		
+		
+		
+		
 
 	}
+	
+	/*public void State() throws InterruptedException {
+		PageFactory.initElements(driver,loginpage.class);
+		loginpage.state.click();
+		Thread.sleep(2000);
+		List<WebElement>dropdown =driver.findElements(By.xpath("//ul[@id='Rform:state_items']//following::li"));
+		for (WebElement webElement :dropdown)
+  		{
+  			String dropDown1 =webElement.getText();
+  			if(dropDown1.contains("CAR"))
+  			
+  			{
+  				webElement.click();
+  				break;
+  			}
+  			
+  		}
+  		Thread.sleep(5000);
+  		}*/
+
+		
+	
 	public void vehicledetails() throws InterruptedException
 	{
 		PageFactory.initElements(driver,loginpage.class);
@@ -62,28 +99,24 @@ public class LoginTestcases extends commonfunction {
 	public void Brand() throws InterruptedException
 	{
 		loginpage.brand.click();
-		Thread.sleep(2000);
-		List<WebElement>brand =driver.findElements(By.xpath("//ul[@id='Rform:brandFk_items']//following::li"));
+		Thread.sleep(3000);
+		List<WebElement>model =driver.findElements(By.xpath("//ul[@id='Rform:brandFk_items']//following::li"));
 		int position=0;
-		for (WebElement webElement :brand)
-  		{
-  			position++;
-  			if(position==2)
-  			
-  			{
-  				webElement.click();
-  				break;
-  			}
-
-
+		for (WebElement webelemnet :model)
+		{
+			position++;
+			if(position==3)
+			{
+				webelemnet.click();
+			}
 		}
 		Thread.sleep(3000);
-		
+
 	}
 	public void model() throws InterruptedException
 	{
 		loginpage.Model.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		List<WebElement>model =driver.findElements(By.xpath("//ul[@id='Rform:modelFK_items']//following::li"));
 		int position=0;
 		for (WebElement webelemnet :model)
@@ -94,9 +127,14 @@ public class LoginTestcases extends commonfunction {
 				webelemnet.click();
 			}
 		}
+		
 		loginpage.Registration.sendKeys("TN000890");
-		loginpage.Varient.sendKeys("0590");
+		loginpage.Varient.sendKeys("varient590");
+		/*loginpage.Bussiness.sendKeys("Own Bussiness");
+		loginpage.Showroom.sendKeys("Complecx");
+		loginpage.showAdd.sendKeys("Trichy_viralimalai");*/
 		loginpage.next.click();
+		Thread.sleep(2000);
 		
 		
 	}
@@ -254,6 +292,7 @@ public class LoginTestcases extends commonfunction {
 	{
 		PageFactory.initElements(driver,loginpage.class);
 		LoginScreen();
+		
 		vehicledetails();
 		Brand();
 		model();
@@ -266,6 +305,7 @@ public class LoginTestcases extends commonfunction {
 		 Imageuploading();
 		 Auctionfun();
 		
-	
+
+		
 	}
-}
+	}

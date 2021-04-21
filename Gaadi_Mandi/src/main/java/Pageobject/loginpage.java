@@ -15,8 +15,39 @@ public class loginpage {
 	public static WebElement Password;
 	@FindBy(id="Rform:btnSearch")
 	public static WebElement Loginbutton;
+	/*@FindBy(id="Rform:j_idt20")
+	/*public static WebElement Admin;
+	@FindBy(xpath="//*[@id=\'Rform:subdetails\']/button")
+	public static WebElement Subplan;
+	
+	@FindBy(id="Rform:j_idt18")
+	public static WebElement Register;
+	@FindBy(id="Rform:mobile")
+	public static WebElement moblie;
+	@FindBy(xpath="//*[@id=\'Rform:state\']/div[3]")
+	public static WebElement state;
+	@FindBy(id="Rform:loc_input']")
+	public static WebElement location;
+	@FindBy(id="Rform:pc']")
+	public static WebElement pincode;
+	@FindBy(id="Rform:email']")
+	public static WebElement email;
+	@FindBy(id="Rform:password']")
+	public static WebElement password;
+	@FindBy(id="Rform:passwordnew']")
+	public static WebElement repass;
+	@FindBy(xpath="//*[@id=\'Rform:bt\']/div[3]/span")
+	public static WebElement buyertype;
+	@FindBy(xpath="//*[@id=\'Rform:interestIn\']/div[3]")
+	public static WebElement indiducal;
+	@FindBy(xpath="//*[@id=\'Rform:j_idt170\']/span[2]")
+	public static WebElement next;*/
 	@FindBy(id="Rform:j_idt47")
 	public static WebElement Sell;
+	/*@FindBy(xpath="//div[@class='ui-radiobutton-box ui-widget ui-corner-all ui-state-default ui-state-active']/span")
+	public static WebElement professtional;
+	@FindBy(id="Rform:j_idt78")
+	public static WebElement proceed;*/
 	@FindBy(xpath="//*[@id='Rform:loc_input']")
 	public static WebElement Location;
 	
@@ -31,10 +62,16 @@ public class loginpage {
 	public static WebElement Varient;
 	@FindBy(id="Rform:regNo")
 	public static WebElement Registration;
+	@FindBy(id="Rform:business")
+	public static WebElement Bussiness;
+	@FindBy(id="Rform:ShowroomName")
+	public static WebElement Showroom;
+	@FindBy(id="Rform:ShowroomAdd")
+	public static WebElement showAdd;
 	
 	@FindBy(id="Rform:j_idt114")
 	public static WebElement next;
-	@FindBy(xpath="//*[@id=\'Rform:j_idt93\']/div[3]/span")
+	@FindBy(xpath="//*[@id=\'Rform:j_idt93\']/div[3]")
 	public static WebElement BodyType;
 	@FindBy(xpath="//*[@id=\'Rform:j_idt98\']/div[3]")
 	public static WebElement FuleType;
@@ -82,7 +119,7 @@ public class loginpage {
 	public static WebElement Increment;
 	@FindBy(xpath="//*[@id=\'Rform:auctionStartsfrom\']/button/span[1]")
 	public static WebElement calender2;
-	@FindBy(xpath="//*[@id=\'ui-datepicker-div\']/table/tbody/tr[3]/td[4]/a")
+	@FindBy(xpath="//*[@id=\'ui-datepicker-div\']/table/tbody/tr[4]/td[5]/a")
 	public static WebElement date2;
 	@FindBy(id="Rform:bidDur")
 	public static WebElement duration;
