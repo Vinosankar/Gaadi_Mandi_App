@@ -62,15 +62,17 @@ public class loginpage {
 	public static WebElement Varient;
 	@FindBy(id="Rform:regNo")
 	public static WebElement Registration;
-	@FindBy(id="Rform:business")
+	/*@FindBy(id="Rform:business")
 	public static WebElement Bussiness;
 	@FindBy(id="Rform:ShowroomName")
 	public static WebElement Showroom;
 	@FindBy(id="Rform:ShowroomAdd")
-	public static WebElement showAdd;
+	public static WebElement showAdd;*/
 	
 	@FindBy(id="Rform:j_idt114")
 	public static WebElement next;
+/*	@FindBy(id="Rform:vCnditionGo1")
+	public static WebElement VEHICLE;*/
 	@FindBy(xpath="//*[@id=\'Rform:j_idt93\']/div[3]")
 	public static WebElement BodyType;
 	@FindBy(xpath="//*[@id=\'Rform:j_idt98\']/div[3]")
@@ -119,7 +121,7 @@ public class loginpage {
 	public static WebElement Increment;
 	@FindBy(xpath="//*[@id=\'Rform:auctionStartsfrom\']/button/span[1]")
 	public static WebElement calender2;
-	@FindBy(xpath="//*[@id=\'ui-datepicker-div\']/table/tbody/tr[4]/td[5]/a")
+	@FindBy(xpath="//*[@id=\"ui-datepicker-div\"]/table/tbody/tr[2]/td[7]/a") 
 	public static WebElement date2;
 	@FindBy(id="Rform:bidDur")
 	public static WebElement duration;

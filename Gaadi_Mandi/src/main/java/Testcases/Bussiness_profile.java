@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import Commonfunction.commonfunction;
 import Pageobject.Vehiclepage;
 
-public class Vehicle_Condition extends commonfunction {
+public class Bussiness_profile extends commonfunction {
 	
 @Test
 public void Vehicle_Function() throws InterruptedException

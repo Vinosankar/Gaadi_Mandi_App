@@ -63,8 +63,10 @@ public class commonfunction {
 		driver.navigate().refresh();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		testcase=extentReport.createTest("successfully passed");
-		testcase.log(Status.PASS,"Testcases is Success");
+		testcase=extentReport.createTest("Login page function");
+		testcase.log(Status.PASS,"Success-Login Gaadi mandi.Com");
+		testcase.log(Status.INFO,"Actual Result:PASS");
+		testcase.log(Status.INFO,"Expect Result:PASS/FAIL");
 	}
 	
 	@AfterSuite

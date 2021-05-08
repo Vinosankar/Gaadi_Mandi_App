@@ -5,11 +5,16 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
@@ -77,8 +82,9 @@ public class LoginTestcases extends commonfunction {
 	public void vehicledetails() throws InterruptedException
 	{
 		PageFactory.initElements(driver,loginpage.class);
-		testcase=extentReport.createTest("Gaadi Mandi TestCases");
-		testcase.log(Status.PASS,"Testcases is passed & Successfully");
+		testcase=extentReport.createTest("Verify Category TestCAses");
+		testcase.log(Status.PASS,"Successfully clicked Category");
+		testcase.log(Status.INFO,"Actual Result:Car Option Clicked");
     
           loginpage.category.click();
           Thread.sleep(2000);
@@ -98,6 +104,8 @@ public class LoginTestcases extends commonfunction {
   		}
 	public void Brand() throws InterruptedException
 	{
+		testcase=extentReport.createTest("Testing Brand TestCases");
+		testcase.log(Status.PASS,"Successfully clicked Brand");
 		loginpage.brand.click();
 		Thread.sleep(3000);
 		List<WebElement>model =driver.findElements(By.xpath("//ul[@id='Rform:brandFk_items']//following::li"));
@@ -105,7 +113,7 @@ public class LoginTestcases extends commonfunction {
 		for (WebElement webelemnet :model)
 		{
 			position++;
-			if(position==3)
+			if(position==5)
 			{
 				webelemnet.click();
 			}
@@ -115,6 +123,8 @@ public class LoginTestcases extends commonfunction {
 	}
 	public void model() throws InterruptedException
 	{
+		testcase=extentReport.createTest("Testing Model Testcases");
+		testcase.log(Status.PASS,"Successfully clicked Model");
 		loginpage.Model.click();
 		Thread.sleep(5000);
 		List<WebElement>model =driver.findElements(By.xpath("//ul[@id='Rform:modelFK_items']//following::li"));
@@ -122,19 +132,27 @@ public class LoginTestcases extends commonfunction {
 		for (WebElement webelemnet :model)
 		{
 			position++;
-			if(position==1)
+			if(position==5)
 			{
 				webelemnet.click();
 			}
 		}
 		
 		loginpage.Registration.sendKeys("TN000890");
+		testcase=extentReport.createTest(" Testing Registration number");
+		testcase.log(Status.PASS, "successfully enter the Registration number");
 		loginpage.Varient.sendKeys("varient590");
-		/*loginpage.Bussiness.sendKeys("Own Bussiness");
+		testcase=extentReport.createTest("Testing Varient Fileld");
+		testcase.log(Status.PASS,"Successfully Varient Filed enter");
+	/*	loginpage.Bussiness.sendKeys("Own Bussiness");
 		loginpage.Showroom.sendKeys("Complecx");
 		loginpage.showAdd.sendKeys("Trichy_viralimalai");*/
 		loginpage.next.click();
 		Thread.sleep(2000);
+		testcase=extentReport.createTest("Testing Vehicle detail screen");
+		testcase.log(Status.PASS,"Vehicle details saved successfully");
+		/*loginpage.VEHICLE.click();
+		Thread.sleep(2000);*/
 		
 		
 	}
@@ -147,7 +165,7 @@ public class LoginTestcases extends commonfunction {
 		for(WebElement webElement :Select)
 		{
 			position++;
-			if(position==2)
+			if(position==5)
 			{
 				webElement.click();
 				break;
@@ -184,11 +202,13 @@ public class LoginTestcases extends commonfunction {
 		select1.selectByIndex(4);
 		loginpage.date.click();
 		Thread.sleep(1000);
-		loginpage.ChassisNo.sendKeys("CH00008");
-		loginpage.Engineno.sendKeys("ENg80099");
-		loginpage.NumOwn.sendKeys("5");
-		loginpage.Dis.sendKeys("200");
+		loginpage.ChassisNo.sendKeys("UH06708");
+		loginpage.Engineno.sendKeys("TYU80099");
+		loginpage.NumOwn.sendKeys("2");
+		loginpage.Dis.sendKeys("100");
 		loginpage.Savebutton.click();
+		testcase=extentReport.createTest("Testing Vehicle Vehicle condition second Screen");
+		testcase.log(Status.PASS,"Successfully enter the vehicle details");
 	}
 	public void Vehicle_Function() throws InterruptedException
 	{
@@ -215,7 +235,8 @@ public class LoginTestcases extends commonfunction {
 			}
 		}
 		Thread.sleep(2000);
-		
+		testcase=extentReport.createTest("Testing Document Testcases");
+		testcase.log(Status.PASS, "Document Upload succesfully");
 
 	}
 	
@@ -224,7 +245,7 @@ public class LoginTestcases extends commonfunction {
 		
 		loginpage.pic.click();
 		Thread.sleep(2000);
-		StringSelection selection = new StringSelection("C:\\Users\\hp\\Downloads\\FireShot\\invoice45.png");
+		StringSelection selection = new StringSelection("C:\\Users\\hp\\Downloads\\FireShot\\invoice5.png");
 		Thread.sleep(3000);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -242,13 +263,15 @@ public class LoginTestcases extends commonfunction {
 		loginpage.saveimage.click();
 		Thread.sleep(1000);
 		loginpage.continuebutton.click();
+		testcase=extentReport.createTest("Testing Invoice Document Upload" );
+		testcase.log(Status.PASS, "Successfully Uploading Invoice Documnet");
 		
 
 	}
-	public  void Imageuploading() throws InterruptedException, AWTException
+	public  void Imageuploading() throws InterruptedException, AWTException, IOException
 	{
 		loginpage.imageupload.click();
-		StringSelection selection = new StringSelection("C:\\Users\\hp\\Downloads\\FireShot\\images (5).jpg");
+		StringSelection selection = new StringSelection("C:\\Users\\hp\\Downloads\\FireShot\\images (7).jpg");
 		Thread.sleep(2000);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection,null);
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
@@ -269,6 +292,13 @@ public class LoginTestcases extends commonfunction {
 		Thread.sleep(2000);
 		loginpage.Auctionprice.sendKeys("30000");
 		loginpage.Increment.sendKeys("5000");
+		testcase=extentReport.createTest("Testing Vehicle imgae testcases");
+		testcase.log(Status.PASS, "Successfully uploading images");
+		TakesScreenshot screenshot =(TakesScreenshot) driver;
+		File sourceFile=screenshot.getScreenshotAs(OutputType.FILE);
+		File destinationFile =new File("sample.png");
+		FileHandler.copy(sourceFile, destinationFile);
+		
 		
 	}
 	
@@ -282,13 +312,19 @@ public class LoginTestcases extends commonfunction {
 		loginpage.saveiconbutton.click();
 		Thread.sleep(2000);
 		loginpage.Termcondition.click();
+		testcase=extentReport.createTest("push Data Successfully");
+		testcase.log(Status.PASS,"push data Successfully " );
 		loginpage.Verify.click();
+		testcase=extentReport.createTest("Testing Auction Screen Verification");
+		testcase.log(Status.PASS," Successfully Auction function Verifyied" );
+		testcase=extentReport.createTest("Overview");
+		testcase.log(Status.PASS,"Successfully Push data Gaadi mandi.com");
 	}
 	
 
 	
 	@Test
-	public void Function() throws InterruptedException, AWTException
+	public void Function() throws InterruptedException, AWTException, IOException
 	{
 		PageFactory.initElements(driver,loginpage.class);
 		LoginScreen();
