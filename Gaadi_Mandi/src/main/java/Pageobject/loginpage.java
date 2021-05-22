@@ -125,7 +125,7 @@ public class loginpage {
 	public static WebElement date2;
 	@FindBy(id="Rform:bidDur")
 	public static WebElement duration;
-	@FindBy(id="Rform:j_idt385")
+	@FindBy(id="Rform:j_idt340")
 	public static WebElement saveiconbutton;
 	@FindBy(xpath="//*[@id=\'Rform:condition\']/div[2]/span")
 	public static WebElement Termcondition;

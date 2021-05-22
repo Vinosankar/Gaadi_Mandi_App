@@ -7,13 +7,6 @@
       <class name="Testcases.LoginTestcases"/>
     
     </classes>
-  </test> <!-- Test -->
-   <test  name="VehicleTest">
-   
-    <classes>
-     
-      <class name="Testcases.LoginTestcases"/>
-   
-    </classes>
+  
   </test> <!-- Test -->
 </suite> <!-- Suite -->

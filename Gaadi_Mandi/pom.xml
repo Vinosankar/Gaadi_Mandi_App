@@ -5,6 +5,7 @@
 	<groupId>Website</groupId>
 	<artifactId>Gaadi_Mandi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -16,44 +17,18 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-
-			<plugin>
+				<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.4</version>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
 				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>Commonfunction.commonfunction</mainClass>
-							
-							<addClasspath>true</addClasspath>
-							<classpathPrefix>lib/</classpathPrefix>
-						</manifest>
-					</archive>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.8</version>
-				<executions>
-					<execution>
-						<id>copy-dependencies</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/lib</outputDirectory>
-							<includeScope>runtime</includeScope>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
 		</plugins>
 	</build>
-
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 		<dependency>
@@ -80,5 +55,7 @@
 
 
 
+
 	</dependencies>
+
 </project>
